@@ -2,8 +2,8 @@ import tensorflow as tf
 import numpy as np
 
 class RotNet90(tf.keras.Model):
-    def __init__(self, size, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
         input_layer = tf.keras.layers.Input([None, None, 3], dtype=tf.uint8)
         core = tf.keras.applications.ResNet50(
             include_top=True, weights=None, input_tensor=input_layer,
@@ -11,7 +11,7 @@ class RotNet90(tf.keras.Model):
         )
         x = core(x)
         self.model = tf.keras.models.Model(inputs=[input_layer], outputs=[x])
-        self.size = size
+
 
 class ResnetModel:
     def __init__(self, checkpoint_path: str, size: int=256):
