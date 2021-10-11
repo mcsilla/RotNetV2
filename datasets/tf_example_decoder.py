@@ -19,7 +19,7 @@ class TfExampleDecoder:
     def _decode_image(self, content, channels):
       return tf.image.decode_jpeg(content, channels)
 
-    def decode(self, serialized_example, image_size):
+    def decode(self, serialized_example, image_size=256):
         parsed_tensors = tf.io.parse_single_example(
             serialized=serialized_example, features=self._keys_to_features)
         image = self._decode_image(parsed_tensors[f'image/encoded/{image_size}'], 3)
