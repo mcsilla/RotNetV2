@@ -5,7 +5,7 @@ from argparse import RawTextHelpFormatter
 import os
 print("[-] Importing tensorflow...")
 import tensorflow as tf  # noqa: E402
-print(f"[+] Done! Tensorflow version: {tf.version.VERSION})"
+print(f"[+] Done! Tensorflow version: {tf.version.VERSION}")
 
 print("[-] Importing Deeplabv3plus Trainer class...")
 from deeplabv3plus.train import Trainer  # noqa: E402
