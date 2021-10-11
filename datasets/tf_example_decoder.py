@@ -23,5 +23,8 @@ class TfExampleDecoder:
         parsed_tensors = tf.io.parse_single_example(
             serialized=serialized_example, features=self._keys_to_features)
         image = self._decode_image(parsed_tensors[f'image/encoded/{image_size}'], 3)
+        image = tf.image.convert_image_dtype(
+            image, tf.int32,
+        )
         label = parsed_tensors['label']
         return image, label
