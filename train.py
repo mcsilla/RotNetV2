@@ -4,8 +4,8 @@ import os
 
 import tensorflow as tf
 
-from .datasets.dataloader import GenericDataLoader
-from .model.model import RotNet90
+from datasets.dataloader import GenericDataLoader
+from model.model import RotNet90
 
 
 class Trainer:
