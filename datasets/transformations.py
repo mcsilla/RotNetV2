@@ -47,4 +47,5 @@ def make_random_transformation(image, label):
 
 def create_input(image, label):
     image = tf.cast(image, tf.float32) / 127.5 - 1
+    label = tf.cast(label, tf.float32)
     return image, label
