@@ -29,6 +29,7 @@ CONFIG = {
     'power': 0.9,
     'num_of_train_examples': 547372,
     'num_of_val_examples': 60820,
+    'image_size': 256,
 }
 
 steps_per_epoch = CONFIG['num_of_train_examples'] // CONFIG['train_dataset_config']['batch_size']
