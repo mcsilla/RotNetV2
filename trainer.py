@@ -7,8 +7,8 @@ print("[-] Importing tensorflow...")
 import tensorflow as tf  # noqa: E402
 print(f'[+] Done! Tensorflow version: {tf.version.__version__}')
 
-print("[-] Importing Deeplabv3plus Trainer class...")
-from deeplabv3plus.train import Trainer  # noqa: E402
+print("[-] Importing Trainer class...")
+from train import Trainer  # noqa: E402
 
 print("[-] Importing config files...")
 from config import CONFIG_MAP  # noqa: E402
