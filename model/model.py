@@ -1,8 +1,9 @@
 import tensorflow as tf
 import numpy as np
 
-class RotNet90:
-    def __init__(self, size):
+class RotNet90(tf.keras.Model):
+    def __init__(self, size, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         input_layer = tf.keras.layers.Input([None, None, 3], dtype=tf.uint8)
         core = tf.keras.applications.ResNet50(
             include_top=True, weights=None, input_tensor=input_layer,

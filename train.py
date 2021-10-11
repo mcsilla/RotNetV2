@@ -17,7 +17,6 @@ class Trainer:
     """
     def __init__(self, config):
         self.config = config
-        self._assert_config()
 
         # Train Dataset
         train_dataloader = GenericDataLoader(self.config[
