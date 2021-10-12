@@ -20,7 +20,7 @@ class GenericDataLoader:
         dataset = dataset.map(self._parser_fn)
         if dataset_type == 'train':
             dataset = dataset.map(self._transform_fn)
-        dataset = dataset.map(self._create_input_fn)
+        # dataset = dataset.map(self._create_input_fn)
         dataset = dataset.shuffle(5000, reshuffle_each_iteration=True)
         dataset = dataset.batch(self.configs['batch_size'], drop_remainder=True)
         dataset = dataset.prefetch(tf.data.experimental.AUTOTUNE)

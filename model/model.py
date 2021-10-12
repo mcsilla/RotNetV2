@@ -4,7 +4,9 @@ import numpy as np
 class RotNet90(tf.keras.Model):
     def __init__(self):
         super().__init__()
-        input_layer = tf.keras.layers.Input([None, None, 3], dtype=tf.uint8)
+        input_layer = tf.keras.layers.Input([None, None, 3], dtype=tf.int32)
+        x = tf.cast(input_layer, tf.float32)
+        x = tf.keras.applications.resnet50.preprocess_input(x)
         core = tf.keras.applications.ResNet50(
             include_top=True, weights=None, input_tensor=input_layer,
             input_shape=None, pooling=None, classes=4, classifier_activation='softmax'
