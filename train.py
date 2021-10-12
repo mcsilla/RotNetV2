@@ -51,7 +51,7 @@ class Trainer:
                 end_learning_rate=self.config['end_learning_rate'],
                 decay_steps=self.config['decay_steps'],
                 power=self.config['power'])
-            self._model = RotNet90().model
+            self._model = RotNet90(self.config['image_size']).model
 
             self._model.compile(
                 optimizer=tf.keras.optimizers.Adam(

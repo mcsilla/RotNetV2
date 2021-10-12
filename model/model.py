@@ -2,8 +2,8 @@ import tensorflow as tf
 import numpy as np
 
 class RotNet90:
-    def __init__(self):
-        input_layer = tf.keras.layers.Input([None, None, 3], dtype=tf.uint8)
+    def __init__(self, image_size):
+        input_layer = tf.keras.layers.Input([image_size, image_size, 3], dtype=tf.uint8)
         x = tf.cast(input_layer, tf.float32)
         x = tf.keras.applications.resnet50.preprocess_input(x)
         core = tf.keras.applications.ResNet50(
